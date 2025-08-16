@@ -1,21 +1,22 @@
 package ca.dhali.learn.accounts.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Setter @Getter @ToString @NoArgsConstructor @AllArgsConstructor
 public class Accounts extends BaseEntity {
 
-    private long customerId;
+    @Column(name="customer_id")
+    private Long customerId;
 
+    @Column(name="account_number")
     @Id
-    private long accountNumber;
+    private Long accountNumber;
 
+    @Column(name="account_type")
     private String accountType;
 
+    @Column(name="branch_address")
     private String branchAddress;
 }
